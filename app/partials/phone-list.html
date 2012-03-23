@@ -1,0 +1,29 @@
+<ul class="controls">
+  <li>
+    Search: <input type="text" name="query"/>
+  </li>
+  <li>
+    Sort by:
+    <select name="orderProp">
+      <option value="name">Alphabetical</option>
+      <option value="age">Newest</option>
+    </select>
+    <br><br>
+    <a href="#/phones/new">New</a>
+    <br><br>
+    <a href="#/phones/aggregation">Aggregation</a>
+  </li>
+</ul>
+
+
+<ul class="phones">
+  <li ng:repeat="phone in phones">  
+    <a href="#/phones/{{phone._id}}">{{phone.name}}</a>
+    <a href="#/phones/{{phone._id}}" class="thumb"><img ng:src="{{phone.imageUrl}}"></a>
+    <p>
+        {{phone.snippet}}
+        <a href="#/phones/edit/{{phone._id}}">Edit</a>
+        <a href="" ng:click="remove(phone)">Remove</a> 
+    </p>
+  </li>
+</ul>   

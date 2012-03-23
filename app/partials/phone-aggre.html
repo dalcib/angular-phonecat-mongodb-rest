@@ -1,0 +1,35 @@
+<br>
+<br>
+Count Phones: {{count.ok}}
+<br>
+<br>
+Distinct Carriers: {{distinct.ok}}
+
+        
+<br>
+<br>
+<h3> Android version - MapReduce</h3>
+<ul>
+    <li ng-repeat="android in mapReduce">
+        {{android._id}} = {{android.value}}
+    </li>
+</ul>
+<h3>Carrier - Group</h3>
+<table style="border:1pt;border-collapse:collapse;">
+    <thead>
+        <th>Carrier</th>
+        <th>Sum(age)</th>
+        <th>Count(age)</th>
+        <th>Max(age)</th>
+        <th>Avg(age)</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="carrier in group">
+            <td>{{carrier.carrier}}</td>
+            <td>{{carrier.sum}}</td>
+            <td>{{carrier.count}}</td>
+            <td>{{carrier.max}}</td>
+            <td>{{carrier.avg}}</td>
+        </tr>
+    </tbody>
+</table>
