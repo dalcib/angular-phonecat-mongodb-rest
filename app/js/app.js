@@ -2,7 +2,7 @@
 /* http://docs.angularjs.org/#!angular.service */
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
+angular.module('myApp', [ 'myApp.filters', 'myApp.services', 'myApp.directives']).
   config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/phones', {template: 'partials/phone-list.html',   controller: PhoneListCtrl});

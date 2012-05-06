@@ -50,7 +50,7 @@ Rest API - Node/MongoDB/Angular
 **/
 
 
-angular.module('myApp.services', []).
+angular.module('myApp.services', ['ngResource']).
     factory('Phone', ['$resource', '$http',
         function($resource, $http) {
             return $resource('api/phones/:_id', {}, {
