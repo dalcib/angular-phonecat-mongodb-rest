@@ -1,6 +1,6 @@
 # Angular-PhoneCat-MongoDB-Rest
 
-Angular 1.0.0.RC1 Version - http://angularjs.org 
+Angular 1.0.5 Version - http://angularjs.org 
 
 ## Overview
 
@@ -77,12 +77,14 @@ Otherwise, the document is updated.
     Ex .mapReduce({},{"map": "function(){emit(this.details.android.os, 1);}", 
                     "reduce": "function(key, values){return values.length;}"
                     }
-                 
+## Alternative Sintax API
+	
+	Angular-resource:  Phone.query({})
+	MondoDB: db.phones.query({})
 
 ## Dependencies
 
 - Express
-- Mongodb
 - Mongojs
 
 ## TODO

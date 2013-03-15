@@ -19,7 +19,7 @@
 <ul class="phones">
   <li ng:repeat="phone in phones">  
     <a href="#/phones/{{phone._id}}">{{phone.name}}</a>
-    <a href="#/phones/{{phone._id}}" class="thumb"><img ng:src="{{phone.imageUrl}}"></a>
+    <a href="#/phones/{{phone._id}}" class="thumb"><img ng:src="{{phone.imageUrl}}"></a>{{phone.teste}}
     <p>
         {{phone.snippet}}
         <a href="#/phones/edit/{{phone._id}}">Edit</a>

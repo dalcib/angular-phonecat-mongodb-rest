@@ -1,5 +1,5 @@
 var express = require('express'),
-    app = express.createServer(),
+    app = module.exports.app = express(), 
     db = require('mongojs').connect('PhoneCat');
     
 app.configure(function () {
@@ -25,6 +25,7 @@ var objectId = function (_id) {
 var fn = function (req, res) {
     res.contentType('application/json');
     var fn = function (err, doc) { 
+    //console.log('asdasdas',req.body ,err,doc)
         if (err) { 
             if (err.message) {
                 doc = {error : err.message} 
@@ -73,7 +74,7 @@ app.del('/api/:collection/:id', function(req, res) {
 
 //Group
 app.put('/api/:collection/group', function(req, res) {
-    db.collection(req.params.collection).group(req.body.keys, req.body.cond, req.body.initial, req.body.reduce, req.body.finalize, fn(req, res))
+    db.collection(req.params.collection).group(req.body, fn(req, res))
 })
 
 // MapReduce
@@ -90,6 +91,6 @@ app.put('/api/:collection/:cmd',  function (req, res) {
     db.collection(req.params.collection)[req.params.cmd](req.body, fn(req, res)); 
 })
 
-app.listen(8000, function() {
-    console.log("Listening on 8000");
+app.listen(3000, function() {
+    console.log("Listening on 3000");
 });
